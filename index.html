@@ -8,42 +8,84 @@
 	<title>Document</title>
 
 	<style>
+		@font-face {
+ 		 font-family: LiOpu;
+ 		 src: url(LiOpu.ttf);
+}
+		body{
+			background-image: url(bg.jpg);
+			background-size: cover;
+			background-repeat: no-repeat;
+		}
+		.hd{
+			font-family: LiOpu;
+			font-size: 3rem;
+		}
+
+	    .td{
+			font-family: LiOpu;
+			font-size: 2rem;
+		}
 		.container{
 			width: 50%;
-			margin: 3% auto;
+			height: 90%;
+			margin: 2% auto;
 			padding: 3rem;
+			background-color: rgba(0, 0, 0, 0.37);
 			border: 1px solid orangered;
 			border-radius: 1rem;
 		}
 
 		h2{
 			background-color: aqua;
-			color: red;
-			padding: .5rem;
-			margin-bottom: 1rem;
+			color: orangered;
+			margin: 0 0 1rem 0; 
 			text-align: center;
-			font-size: 2rem;
 			border-radius: .3rem;
+			font-weight: normal;
+		}
+
+		h2:hover{
+			letter-spacing: 3px;
+			transition: .5s;
 		}
 
 		.h-w{
 			outline: none;
 			height: 2.5rem;
-			width: 100%;
-			margin-bottom: .8rem;
+			width: 97%;
+			margin-bottom: .4rem;
 			border: 1px solid red;
-			background-color: rgb(255, 233, 225);
+			background-color: rgb(255, 202, 183);
 			border-radius: 2px;
-		}
-
-		.inpt-box{
 			font-size: 1.5rem;
-		    letter-spacing: 2px;
 		}
 
+		.hvr:hover{
+			padding-left: 1rem;
+			letter-spacing: .8rem;
+			background-color: orangered;
+			color: white;
+			transition: .7s;
+		}
+
+		.clr{
+			color: white;
+		    letter-spacing: 2px;
+			text-shadow: black;
+		}
+
+		.inpt-box input::placeholder{
+			padding-left: .5rem;
+			font-family: LiOpu;
+            font-size: 1rem;
+			color: rgb(255, 112, 60);
+		}
+		
 		.rslt-box{
         background-color: rgb(155, 255, 255);
 		text-align: center;
+		font-size: 1.5rem;
 		display: inline-block;
 		width: 100%;
 		padding-top: 4px;
@@ -65,12 +107,19 @@
 			border: 1px solid rgb(196, 196, 255);
 			background-color: rgb(62, 62, 255);
 			color: white;
-			font-size: 1rem;
+			font-size: 1.4rem;
 			letter-spacing: 2px;
 			height: 2rem;
 			margin-bottom: 1rem;
 			border-radius: 1rem;
 			cursor: pointer;
+		}
+
+		.hvr-btn:hover{
+			background-color: orangered;
+			color: white;
+			letter-spacing: .3rem;
+			transition: 1s;
 		}
 
 	</style>
@@ -80,19 +129,21 @@
 
 <div class="container">
 
-		<h2>Weekend Market Cost</h2>
+		<h2 class="hd">কেনাকাটার হিসাব করুন</h2>
 
 	<div class="inpt-box">
-		Jeans Pant Price:	<br>
-			<input type="text" id="item1" class="h-w">	<br>
-		T-Shirt Price:	<br>
-			<input type="text" id="item2" class="h-w">	<br>
-		Sports Trousers Price:	<br>
-			<input type="text" id="item3" class="h-w">	<br>
+		<span class="clr td">পেন্টের মূল্য:</span> 	<br>
+			<input type="text" id="item1" class="h-w hvr" placeholder="ইংরেজিতে মূল্য লিখুন">	<br>
 
-            <button onclick="show()" class="h-w btn">Check Total Cost</button>
+			<span class="clr td">শার্টের মূল্য:</span>	<br>
+			<input type="text" id="item2" class="h-w hvr" placeholder="ইংরেজিতে মূল্য লিখুন">	<br>
+			
+			<span class="clr td">ট্রাউজারের মূল্য:</span>	<br>
+			<input type="text" id="item3" class="h-w hvr" placeholder="ইংরেজিতে মূল্য লিখুন">	<br>
 
-			<span class="rslt-box">Your Total Cost (TK):</span><br>
+            <button onclick="show()" class="h-w btn hvr-btn td">সর্বমোট মূল্য দেখুন</button>
+
+			<span class="rslt-box td">আপনার মোট খরচ (টাকায়):</span><br>
 			<input type="text" id="result-bx" class="h-w result_bx">	<br>
 	</div>
 
