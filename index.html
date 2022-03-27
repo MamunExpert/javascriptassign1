@@ -8,19 +8,40 @@
 	<title>Document</title>
 
 	<style>
-		h2{
-			background-color: aqua;
-			color: black;
-			padding: 2rem 5rem;
-			width: 100%;
-			margin-bottom: 3rem;
+		.container{
+			width: 50%;
+			margin: 5% auto;
+			padding: 3rem;
+			border: 1px solid orangered;
+			border-radius: 1rem;
 		}
 
-		.container{
-			margin: 0 auto;
-			width: 70%;
-			border: 1px orangered;
+		h2{
+			background-color: aqua;
+			color: red;
+			padding: 1rem;
+			margin-bottom: 2rem;
+			text-align: center;
+			font-size: 2rem;
+			border-radius: .3rem;
 		}
+
+		.h-w{
+			outline: none;
+			height: 2.5rem;
+			width: 100%;
+			margin-bottom: .8rem;
+			border: 1px solid red;
+			background-color: rgb(255, 213, 197);
+			border-radius: 2px;
+		}
+
+		.inpt-box{
+			font-size: 1.5rem;
+		    letter-spacing: 2px;
+		}
+
+
 	</style>
 </head>
 <body>
@@ -28,9 +49,17 @@
 
 <div class="container">
 
-    <h2>KinaKata of Kodu Mia</h2>
+		<h2>Weekend Market Cost</h2>
 
+	<div class="inpt-box">
+		Jeans Pant Price:	<br>
+			<input onclick="item01()" type="text" id="item1" class="h-w">	<br>
+		T-Shirt Price:	<br>
+			<input onclick="item02()" type="text" id="item2" class="h-w">	<br>
+		Sports Trousers Price:	<br>
+			<input onclick="item03()" type="text" id="item3" class="h-w">
 
+	</div>
 <script>
 
 	function priceCalculation(pant, shirt, watch) {
