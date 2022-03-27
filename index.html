@@ -10,7 +10,7 @@
 	<style>
 		.container{
 			width: 50%;
-			margin: 5% auto;
+			margin: 3% auto;
 			padding: 3rem;
 			border: 1px solid orangered;
 			border-radius: 1rem;
@@ -19,8 +19,8 @@
 		h2{
 			background-color: aqua;
 			color: red;
-			padding: 1rem;
-			margin-bottom: 2rem;
+			padding: .5rem;
+			margin-bottom: 1rem;
 			text-align: center;
 			font-size: 2rem;
 			border-radius: .3rem;
@@ -32,7 +32,7 @@
 			width: 100%;
 			margin-bottom: .8rem;
 			border: 1px solid red;
-			background-color: rgb(255, 213, 197);
+			background-color: rgb(255, 233, 225);
 			border-radius: 2px;
 		}
 
@@ -41,6 +41,37 @@
 		    letter-spacing: 2px;
 		}
 
+		.rslt-box{
+        background-color: rgb(155, 255, 255);
+		text-align: center;
+		display: inline-block;
+		width: 100%;
+		padding-top: 4px;
+		font-weight: bold;
+		}
+        
+		.result_bx{
+			border: 1px solid rgb(0, 255, 255);
+			background-color: rgb(215, 255, 255);
+			height: 3rem;
+			width: 99%;
+			font-size: 1.5rem;
+			color: blue;
+			letter-spacing: 2px;
+			text-align: center;
+		}
+
+		.btn{
+			border: 1px solid rgb(196, 196, 255);
+			background-color: rgb(62, 62, 255);
+			color: white;
+			font-size: 1rem;
+			letter-spacing: 2px;
+			height: 2rem;
+			margin-bottom: 1rem;
+			border-radius: 1rem;
+			cursor: pointer;
+		}
 
 	</style>
 </head>
@@ -53,27 +84,35 @@
 
 	<div class="inpt-box">
 		Jeans Pant Price:	<br>
-			<input onclick="item01()" type="text" id="item1" class="h-w">	<br>
+			<input type="text" id="item1" class="h-w">	<br>
 		T-Shirt Price:	<br>
-			<input onclick="item02()" type="text" id="item2" class="h-w">	<br>
+			<input type="text" id="item2" class="h-w">	<br>
 		Sports Trousers Price:	<br>
-			<input onclick="item03()" type="text" id="item3" class="h-w">
+			<input type="text" id="item3" class="h-w">	<br>
 
+            <button onclick="show()" class="h-w btn">Check Total Cost</button>
+
+			<span class="rslt-box">Your Total Cost (TK):</span><br>
+			<input type="text" id="result-bx" class="h-w result_bx">	<br>
 	</div>
+
+
+
+
+
+
 <script>
+		function show(){
+			var item01=parseInt(document.getElementById('item1').value);
+			var item02=parseInt(document.getElementById('item2').value);
+			var item03=parseInt(document.getElementById('item3').value);
+			var result= item01+item02+item03;
 
-	function priceCalculation(pant, shirt, watch) {
+			document.getElementById('result-bx').value=result;
+		}
 
-  		var price= pant + shirt + watch
-   		return price;
-	}
-    
-		var price = priceCalculation(500, 250, 250)
-  	    document.write('<br>', "Total Cost: ", price);
-
-	
+		
 </script>
-
 </div>
 	
 </body>
